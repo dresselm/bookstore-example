@@ -1,25 +1,33 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
-
+#  Postgres client
 gem 'pg'
 
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
+# Rails and related gems
+gem 'rails',        '~> 4.0.0'
+# Template engine
+gem 'slim-rails',   '~> 2.0.0'
+# CSS
+gem 'sass-rails',   '~> 4.0.0'
+# JS
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'slim-rails'
-
-gem 'turbolinks'
-
+gem 'jquery-rails', '~> 3.0.0'
+# Asset Pipeline
+gem 'uglifier',     '~> 2.3.0'
+# Performance
+gem 'turbolinks',   '~> 1.3.0'
+# Pagination
 gem 'kaminari'
 
+# Alternate webserver
 gem 'puma'
-gem 'shelly-dependencies'
 
+# Import books from openlibrary.org
 gem 'openlibrary', :git => 'git@github.com:dresselm/openlibrary.git'
 
+# ElasticSearch client
 gem 'searchkick'
 
+# Debugging
 gem 'pry'
 
