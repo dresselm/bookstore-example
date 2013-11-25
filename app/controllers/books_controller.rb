@@ -8,7 +8,11 @@ class BooksController < ApplicationController
   end
 
   def autocomplete
-    render json: Book.search(params[:query], autocomplete: true, limit: 10).map(&:title)
+    book_titles  = Book.search(params[:query], autocomplete: true, limit: 10).map(&:title)
+    # TODO proof of concept - may need to customize ES gem for cross-model searching
+    author_names = Author.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+
+    render json: book_titles + author_names
   end
 
   def import
