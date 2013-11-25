@@ -16,13 +16,17 @@ Setup Database
 CREATE ROLE bookstore SUPERUSER CREATEDB;
 ```
 
-- Create, migrate and seed the development database: `rake db:create db:migrate db:seed`
-- Test that db is ready
+- Create, migrate and seed the development database:
 ```
-$ rails r 'puts "Books: #{Book.count}"; puts "Authors: #{Author.count}"; puts "Subjects: #{Subject.count}"'
-Books: 51
-Authors: 46
-Subjects: 97
+rake db:setup
+```
+
+- Test that the seeds were loaded as expected:
+```
+$ rails c
+> puts "Books: #{Book.count}" # Books: 51
+> puts "Authors: #{Author.count}" # Authors: 46
+> puts "Subjects: #{Subject.count}" # Subjects: 97
 ```
 
 Run the Application
@@ -32,7 +36,3 @@ Run the Application
 Import new books
 ---
 - Enter the OLID into the search box
-
-
-
-
