@@ -21,6 +21,11 @@ CREATE ROLE bookstore SUPERUSER CREATEDB;
 rake db:setup
 ```
 
+- Update ElasticSearch index
+```
+rake searchkick:reindex:all
+```
+
 - Test that the seeds were loaded as expected:
 ```
 $ rails c
