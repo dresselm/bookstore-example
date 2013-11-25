@@ -21,8 +21,10 @@ body
         = link_to "Bookstore", root_path, class: "navbar-brand"
       .collapse.navbar-collapse.main-navbar-collapse
         ul.nav.navbar-nav
-          li class=active_for("books")
+          li class=active_for('index')
             = link_to "Books", books_path
+          li class=active_for('new')
+            = link_to "Import", new_book_path
 
   .container
     - flash.each do |type, message|

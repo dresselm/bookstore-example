@@ -12,10 +12,10 @@ class BooksController < ApplicationController
   end
 
   def import
-    book = Book.import params[:olid]
-    notice = "Imported #{book.title}"
-    redirect_to books_path, notice: notice
+    olid = params[:olid]
+    book = Book.import(olid)
+    redirect_to new_book_path, notice: "Imported #{book.title}"
   rescue Book::ImportError
-    redirect_to books_path, alert: "Failed to import book"
+    redirect_to new_book_path, alert: "Failed to import book: #{olid}"
   end
 end

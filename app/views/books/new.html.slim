@@ -1,0 +1,7 @@
+= form_tag import_books_path, class: "form-inline" do
+  .form-group
+    = text_field_tag :olid, "", placeholder: "OLID", class: "form-control"
+  '
+  = submit_tag "Import book", class: "btn btn-default"
+  '  Import books from the
+  = link_to "Open Library", "https://openlibrary.org/"

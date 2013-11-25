@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  paginates_per 5
+
   has_and_belongs_to_many :authors
   has_and_belongs_to_many :subjects
 
@@ -7,10 +9,11 @@ class Book < ActiveRecord::Base
   def self.import(olid)
     client = Openlibrary::Client.new
     book_data = client.book(olid)
+
     book = Book.new
     book.title = book_data.title
     book.number_of_pages = book_data.number_of_pages
-    book.coverimage = "http://covers.openlibrary.org/b/id/#{book_data.covers.first}-M.jpg"
+    book.coverimage = "https://covers.openlibrary.org/b/id/#{book_data.covers.first}-M.jpg"
     book.publish_date = book_data.publish_date
     book.save!
     book_data.authors.each do |author_data|

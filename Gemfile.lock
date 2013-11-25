@@ -1,3 +1,13 @@
+GIT
+  remote: git@github.com:dresselm/openlibrary.git
+  revision: e186c97c46c75f25d345e091b4ca8573d945ded6
+  specs:
+    openlibrary (2.1.2)
+      activesupport (~> 4)
+      hashie (~> 2.0.2)
+      json (>= 1.7.7)
+      rest-client (~> 1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,6 +39,7 @@ GEM
     arel (4.0.0)
     atomic (1.1.14)
     builder (3.1.4)
+    coderay (1.1.0)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -47,23 +58,23 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.0)
+    json (1.8.1)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.1)
-    openlibrary (2.1.2)
-      activesupport (~> 4)
-      hashie (~> 2.0.2)
-      json (>= 1.7.7)
-      rest-client (~> 1.6)
     pg (0.17.0)
     polyglot (0.3.3)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     puma (2.6.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -104,6 +115,7 @@ GEM
       activesupport (>= 3.0, < 4.1)
       railties (>= 3.0, < 4.1)
       slim (~> 2.0)
+    slop (3.4.7)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -149,8 +161,9 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jquery-rails
   kaminari
-  openlibrary
+  openlibrary!
   pg
+  pry
   puma
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

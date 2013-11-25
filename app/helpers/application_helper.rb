@@ -1,9 +1,6 @@
 module ApplicationHelper
-  def active_for(*paths)
-    "active" if paths.any? do |path|
-      controller, action = path.split("/")
-      controller == controller_name && (action.blank? || action == action_name)
-    end
+  def active_for(action)
+    'active' if action == action_name
   end
 
   def bootstrap_class_for(flash_type)

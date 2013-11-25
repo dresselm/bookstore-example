@@ -17,6 +17,9 @@ gem 'kaminari'
 gem 'puma'
 gem 'shelly-dependencies'
 
-gem 'openlibrary'
+gem 'openlibrary', :git => 'git@github.com:dresselm/openlibrary.git'
 
 gem 'searchkick'
+
+gem 'pry'
+

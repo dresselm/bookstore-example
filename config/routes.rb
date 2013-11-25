@@ -1,5 +1,5 @@
 Bookstore::Application.routes.draw do
-  resources :books, only: :index do
+  resources :books, only: [:index, :new] do
     collection do
       post :import
       get :autocomplete
